@@ -9,7 +9,9 @@ import { CloseIcon } from "./icons/CloseIcon";
 import { MenuIcon } from "./icons/MenuIcon";
 ---
 
-<header class="relative min-w-[375px] w-[1440px] max-w-[1440px]">
+<header
+  class="relative min-w-[375px] w-[375px] md:w-[768px] lg:w-[1440px] max-w-[1440px]"
+>
   <nav class="flex justify-between px-4 py-4 lg:py-0 lg:h-24 border-b-2">
     <div class="flex gap-x-4 items-center">
       <ToggleNav client:load>
@@ -38,7 +40,7 @@ import { MenuIcon } from "./icons/MenuIcon";
     </div>
 
     <div class="flex gap-x-4 items-center">
-      <a href="#Cart">
+      <a href="#Cart" title="Cart" aria-label="Cart">
         <CartIcon />
       </a>
       <Image

@@ -41,9 +41,8 @@ export const LightBox = () => {
         </div>
         <div className="flex gap-x-2 px-10">
           {gallery.map((item) => (
-            <picture>
+            <picture key={item.id}>
               <img
-                key={item.id}
                 onClick={() => setDisplay(item)}
                 src={item.thumbnail}
                 alt={item.alt}

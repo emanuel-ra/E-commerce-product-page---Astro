@@ -36,11 +36,10 @@ const Thumbnails = ({ behavior }: { behavior: (image: Gallery) => void }) => {
   return (
     <div className="flex gap-3 w-2/3 justify-between max-lg:hidden">
       {gallery.map((item) => (
-        <picture>
+        <picture key={item.id}>
           <img
             src={item.thumbnail}
             alt={item.alt}
-            key={item.id}
             className="w-20 rounded cursor-pointer"
             onClick={() => {
               behavior(item);

@@ -1,52 +1,62 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { gallery, type Gallery } from "../../data/gallery";
 import { useLightBoxStore } from "../../stores/LigthBoxStore";
+import { CloseIcon } from "../icons/CloseIcon";
 import { NextIcon } from "../icons/NextIcon";
 import { PreviousIcon } from "../icons/PreviousIcon";
 
-export const ProductGallery = () => {
+export const LightBox = () => {
   const [display, setDisplay] = useState<Gallery>(gallery[0]);
 
-  const { image, alt, prev, next } = display;
+  const open = useLightBoxStore((state) => state.open);
   const setOpen = useLightBoxStore((state) => state.setOpen);
+  const { image, alt, prev, next, id } = display;
 
   const handleDisplay = (image: Gallery) => setDisplay(image);
 
   return (
-    <section className="relative w-full flex flex-col lg:gap-y-5 justify-center lg:px-10 ">
-      <picture>
-        <img
-          src={image}
-          alt={alt}
-          className="lg:w-2/3 lg:rounded-lg"
-          onClick={setOpen}
-        />
-      </picture>
-      <Thumbnails behavior={handleDisplay} />
-      <Arrows prev={prev} next={next} behavior={handleDisplay} />
-    </section>
-  );
-};
-
-const Thumbnails = ({ behavior }: { behavior: (image: Gallery) => void }) => {
-  return (
-    <div className="flex gap-3 w-2/3 justify-between max-lg:hidden">
-      {gallery.map((item) => (
-        <picture>
-          <img
-            src={item.thumbnail}
-            alt={item.alt}
-            key={item.id}
-            className="w-20 rounded cursor-pointer"
-            onClick={() => {
-              behavior(item);
-            }}
-          />
-        </picture>
-      ))}
+    <div
+      className={`${
+        open
+          ? "absolute flex justify-center items-center w-full h-dvh top-0 left-0 bottom-0 overflow-hidden bg-black/75"
+          : ""
+      }`}
+    >
+      <div className="relative w-2/6 flex flex-col gap-y-3">
+        <div className="flex justify-end">
+          <a
+            href="#Close"
+            aria-label="Close Light Box"
+            onClick={setOpen}
+            className="group"
+          >
+            <CloseIcon classes="group-hover:fill-orange-500" />
+          </a>
+        </div>
+        <div className="relative">
+          <Arrows prev={prev} next={next} behavior={handleDisplay} />
+          <picture>
+            <img src={image} alt={alt} className="rounded-lg" />
+          </picture>
+        </div>
+        <div className="flex gap-x-2 px-10">
+          {gallery.map((item) => (
+            <picture>
+              <img
+                onClick={() => setDisplay(item)}
+                src={item.thumbnail}
+                alt={item.alt}
+                className={`rounded cursor-pointer border-2 border-theme-orange                
+                `}
+              />
+            </picture>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
+
 const Arrows = ({
   prev,
   next,
@@ -66,7 +76,7 @@ const Arrows = ({
   };
 
   return (
-    <div className="absolute w-full px-4 lg:hidden">
+    <div className="absolute w-[105%] -left-[2.5%] top-[50%]">
       <ul className="flex justify-between w-full">
         <Arrow
           behavior={handlePrev}

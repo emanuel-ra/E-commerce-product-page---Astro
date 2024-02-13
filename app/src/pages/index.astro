@@ -1,5 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro";
+import { LightBox } from "../components/product/LightBox";
 import { ProductGallery } from "../components/product/ProductGallery";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -13,6 +14,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <div></div>
   </main>
+  <LightBox client:load />
 </Layout>
 
 <style>

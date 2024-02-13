@@ -11,7 +11,11 @@ export const ProductGallery = () => {
   const setOpen = useLightBoxStore((state) => state.setOpen);
 
   const handleDisplay = (image: Gallery) => setDisplay(image);
-
+  const handleLightBox = () => {
+    if (window.screen.width > 800) {
+      setOpen();
+    }
+  };
   return (
     <section className="relative w-full flex flex-col lg:gap-y-5 justify-center lg:px-10 ">
       <picture>
@@ -19,7 +23,7 @@ export const ProductGallery = () => {
           src={image}
           alt={alt}
           className="lg:w-2/3 lg:rounded-lg"
-          onClick={setOpen}
+          onClick={handleLightBox}
         />
       </picture>
       <Thumbnails behavior={handleDisplay} />

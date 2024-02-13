@@ -22,7 +22,7 @@ export const LightBox = () => {
           : ""
       }`}
     >
-      <div className="relative w-2/6 flex flex-col gap-y-3">
+      <div className="relative w-2/3 lg:w-2/6 flex flex-col gap-y-3">
         <div className="flex justify-end">
           <a
             href="#Close"
@@ -43,6 +43,7 @@ export const LightBox = () => {
           {gallery.map((item) => (
             <picture>
               <img
+                key={item.id}
                 onClick={() => setDisplay(item)}
                 src={item.thumbnail}
                 alt={item.alt}

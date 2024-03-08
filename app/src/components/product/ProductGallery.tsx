@@ -7,7 +7,7 @@ import { PreviousIcon } from "../icons/PreviousIcon";
 export const ProductGallery = () => {
   const [display, setDisplay] = useState<Gallery>(gallery[0]);
 
-  const { image, alt, prev, next } = display;
+  const { image, alt, prev, next, id } = display;
   const setOpen = useLightBoxStore((state) => state.setOpen);
 
   const handleDisplay = (image: Gallery) => setDisplay(image);
@@ -17,34 +17,45 @@ export const ProductGallery = () => {
     }
   };
   return (
-    <section className="relative w-full flex flex-col lg:gap-y-5 justify-center lg:px-10 ">
+    <section className='relative w-full flex flex-col lg:gap-y-5 justify-center lg:px-10 '>
       <picture>
         <img
           src={image}
           alt={alt}
-          className="lg:w-2/3 lg:rounded-lg"
+          className='lg:w-2/3 lg:rounded-lg'
           onClick={handleLightBox}
         />
       </picture>
-      <Thumbnails behavior={handleDisplay} />
+      <Thumbnails behavior={handleDisplay} DisplayedId={id} />
       <Arrows prev={prev} next={next} behavior={handleDisplay} />
     </section>
   );
 };
 
-const Thumbnails = ({ behavior }: { behavior: (image: Gallery) => void }) => {
+const Thumbnails = ({
+  behavior,
+  DisplayedId,
+}: {
+  behavior: (image: Gallery) => void;
+  DisplayedId:number
+}) => {
   return (
-    <div className="flex gap-3 w-2/3 justify-between max-lg:hidden">
+    <div className='flex gap-3 w-2/3 justify-between max-lg:hidden'>
       {gallery.map((item) => (
-        <picture key={item.id}>
+        <picture key={item.id} className='relative group'>
           <img
             src={item.thumbnail}
             alt={item.alt}
-            className="w-20 rounded cursor-pointer"
+            className='w-20 rounded-xl'
+          />
+          <div
+            className={`w-full h-full transition ease-linear duration-75 bg-transparent group-hover:bg-white/80 group-hover:border-2 group-hover:border-primary absolute top-0 rounded-xl cursor-pointer
+            ${DisplayedId == item.id && 'bg-white/80 border-2 border-primary'}
+            `}
             onClick={() => {
               behavior(item);
             }}
-          />
+          ></div>
         </picture>
       ))}
     </div>

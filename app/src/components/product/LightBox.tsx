@@ -19,7 +19,7 @@ export const LightBox = () => {
       className={`${
         open
           ? "absolute flex justify-center items-center w-full h-dvh top-0 left-0 bottom-0 overflow-hidden bg-black/75"
-          : ""
+          : "hidden"
       }`}
     >
       <div className="relative w-2/3 lg:w-2/6 flex flex-col gap-y-3">
@@ -33,13 +33,13 @@ export const LightBox = () => {
             <CloseIcon classes="group-hover:fill-orange-500" />
           </a>
         </div>
-        <div className="relative">
+        <div className="relative mb-10">
           <Arrows prev={prev} next={next} behavior={handleDisplay} />
           <picture>
             <img src={image} alt={alt} className="rounded-lg" />
           </picture>
         </div>
-        <div className="flex gap-x-2 px-10">
+        <div className="flex gap-x-6 px-20">
           {gallery.map((item) => (
             <picture key={item.id}>
               <img

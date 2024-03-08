@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import ImgAvatar from "../assets/image-avatar.png";
 import { MobileNav } from "../components/MobileNav";
 import { ToggleNav } from "../components/ToggleNav";
 import NavigationLink from "./NavigationLink.astro";
@@ -19,22 +18,22 @@ import { MenuIcon } from "./icons/MenuIcon";
       </ToggleNav>
       <h1 class="text-4xl font-extrabold">sneakers</h1>
       <ul
-        class="max-lg:hidden flex gap-x-4 links-wrapper text-base font-normal h-full"
+        class="max-lg:hidden flex items-center gap-x-4 links-wrapper text-base font-normal h-full"
       >
         <NavigationLink>
-          <a href="#Collections">Collections</a>
+          <a slot="link" class="flex h-full w-full text-center items-center" href="#Collections">Collections</a>
         </NavigationLink>
         <NavigationLink>
-          <a href="#Men">Men</a>
+          <a slot="link" class="flex h-full w-full text-center items-center" href="#Men">Men</a>
         </NavigationLink>
         <NavigationLink>
-          <a href="#Women">Women</a>
+          <a slot="link" class="flex h-full w-full text-center items-center" href="#Women">Women</a>
         </NavigationLink>
         <NavigationLink>
-          <a href="#About">About</a>
+          <a slot="link" class="flex h-full w-full text-center items-center" href="#About">About</a>
         </NavigationLink>
         <NavigationLink>
-          <a href="#Contact">Contact</a>
+          <a slot="link" class="flex h-full w-full text-center items-center" href="#Contact">Contact</a>
         </NavigationLink>
       </ul>
     </div>
@@ -44,7 +43,7 @@ import { MenuIcon } from "./icons/MenuIcon";
         <CartIcon />
       </a>
       <Image
-        src={ImgAvatar}
+        src={`/images/image-avatar.png`}
         class="size-12 rounded-full avatar"
         width={100}
         height={100}

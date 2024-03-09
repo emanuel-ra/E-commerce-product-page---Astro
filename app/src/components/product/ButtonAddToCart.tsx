@@ -9,7 +9,7 @@ export const ButtonAddToCart = ()=>{
 
     return (
       <button
-        className='w-full bg-primary hover:bg-primary/80 text-white rounded-lg flex items-center justify-center gap-x-2'
+        className='w-full bg-primary hover:bg-primary/80 text-white rounded-lg flex items-center justify-center gap-x-2 px-4 py-2'
         onClick={handleClick}
       >
         <CartIcon fill='#FFFFFF' />

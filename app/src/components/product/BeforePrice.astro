@@ -1,11 +1,12 @@
 ---
 interface Props {
   text?: string;
+  className?:string
 }
 
-const { text } = Astro.props;
+const { text , className } = Astro.props;
 ---
 
-<small class="text-secondary line-through font-semibold">
+<small class={`text-secondary line-through font-semibold ${className}`}>
   {text}
 </small>

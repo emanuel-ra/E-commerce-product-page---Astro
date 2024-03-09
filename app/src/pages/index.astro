@@ -19,22 +19,23 @@ import Layout from "../layouts/Layout.astro";
       <ProductGallery client:only />
     </div>
 
-    <div class="px-4 lg:w-1/3 flex flex-col gap-y-4">
+    <div class="px-4 lg:w-1/3 flex flex-col gap-y-2 lg:gap-y-4 mt-2">
       <h2 class="uppercase font-semibold text-primary text-balance">Sneaker Company</h2>
 
-      <h3 class="uppercase text-4xl font-semibold">Fall Limited Edition Sneakers</h3>
+      <h3 class="uppercase text-2xl font-bold lg:text-4xl text-balance">Fall Limited Edition Sneakers</h3>
 
-      <p class="text-pretty text-secondary">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+      <p class="text-pretty text-secondary mb-5">These low-profile sneakers are your perfect casual wear companion. Featuring a 
       durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
 
       <Price text="$125.00" >
         <Discount slot="discount" text="50%" />
+        <BeforePrice slot="beforePrice" text="$250.00" className="lg:hidden" />  
       </Price>
       
-      <BeforePrice text="$250.00" />      
+      <BeforePrice text="$250.00" className="hidden lg:inline-block" />      
 
-      <div class="flex gap-x-6">
-        <div class="w-1/2">
+      <div class="flex flex-col gap-y-3 lg:flex-row gap-x-6">
+        <div class="w-full lg:w-1/2">
           <QuantityInput client:load />
         </div>
         <ButtonAddToCart client:load />

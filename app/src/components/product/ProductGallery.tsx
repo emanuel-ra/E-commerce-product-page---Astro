@@ -109,8 +109,11 @@ const Arrow = ({
   arialLabel: string;
 }) => {
   return (
-    <li className="bg-white px-2 py-1.5 rounded-full text-center">
-      <a href="#arrow" onClick={behavior} title={title} aria-label={arialLabel}>
+    <li
+      className='bg-white px-2 py-1.5 rounded-full cursor-pointer text-center'
+      onClick={behavior}
+    >
+      <a href='#arrow' title={title} aria-label={arialLabel}>
         {children}
       </a>
     </li>

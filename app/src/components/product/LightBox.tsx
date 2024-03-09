@@ -75,16 +75,22 @@ const Arrows = ({
   };
 
   return (
-    <div className='absolute w-[110%] -left-[4%] md:w-[107%] top-[50%]'>
-      <ul className='flex justify-between w-full'>
+    <div className='absolute w-full h-full flex justify-center'>
+      <ul className='w-full relative flex items-center '>
         <Arrow
           behavior={handlePrev}
           title='Previous Image'
           arialLabel='Previous Image'
+          className='absolute -left-5 '
         >
           <PreviousIcon />
         </Arrow>
-        <Arrow behavior={handleNext} title='Next Image' arialLabel='Next Image'>
+        <Arrow
+          behavior={handleNext}
+          title='Next Image'
+          arialLabel='Next Image'
+          className='absolute -right-5 '
+        >
           <NextIcon />
         </Arrow>
       </ul>
@@ -97,15 +103,19 @@ const Arrow = ({
   behavior,
   title,
   arialLabel,
+  className,
 }: {
   children: React.ReactNode;
   behavior: () => void;
   title: string;
   arialLabel: string;
+  className?:string
 }) => {
   return (
-    <li className="bg-white px-2 py-1.5 rounded-full text-center">
-      <a href="#arrow" onClick={behavior} title={title} aria-label={arialLabel}>
+    <li
+      className={`bg-white size-8 rounded-full flex items-center justify-center ${className}`}
+    >
+      <a href='#arrow' onClick={behavior} title={title} aria-label={arialLabel}>
         {children}
       </a>
     </li>

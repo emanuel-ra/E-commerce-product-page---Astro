@@ -4,7 +4,6 @@ import { useLightBoxStore } from "../../stores/LigthBoxStore";
 import { CloseIcon } from "../icons/CloseIcon";
 import { NextIcon } from "../icons/NextIcon";
 import { PreviousIcon } from "../icons/PreviousIcon";
-
 export const LightBox = () => {
   const [display, setDisplay] = useState<Gallery>(gallery[0]);
 
@@ -18,35 +17,35 @@ export const LightBox = () => {
     <div
       className={`${
         open
-          ? "absolute flex justify-center items-center w-full h-dvh top-0 left-0 bottom-0 overflow-hidden bg-black/75"
-          : "hidden"
+          ? 'absolute flex justify-center items-center w-screen h-dvh top-0 bottom-0 right-0 overflow-hidden bg-black/75 '
+          : 'hidden'
       }`}
     >
-      <div className="relative w-2/3 lg:w-2/6 flex flex-col gap-y-3">
-        <div className="flex justify-end">
+      <div className='relative w-2/3 lg:w-2/6 flex flex-col gap-y-3'>
+        <div className='flex justify-end'>
           <a
-            href="#Close"
-            aria-label="Close Light Box"
+            href='#Close'
+            aria-label='Close Light Box'
             onClick={setOpen}
-            className="group"
+            className='group'
           >
-            <CloseIcon classes="group-hover:fill-orange-500" />
+            <CloseIcon classes='group-hover:fill-orange-500 fill-white' />
           </a>
         </div>
-        <div className="relative mb-10">
+        <div className='relative mb-10'>
           <Arrows prev={prev} next={next} behavior={handleDisplay} />
           <picture>
-            <img src={image} alt={alt} className="rounded-lg" />
+            <img src={image} alt={alt} className='rounded-lg' />
           </picture>
         </div>
-        <div className="flex gap-x-6 px-20">
+        <div className='flex gap-x-2 lg:gap-x-6 lg:px-20'>
           {gallery.map((item) => (
             <picture key={item.id}>
               <img
                 onClick={() => setDisplay(item)}
                 src={item.thumbnail}
                 alt={item.alt}
-                className={`rounded cursor-pointer border-2 border-theme-orange                
+                className={`rounded cursor-pointer border-2 border-theme-orange              
                 `}
               />
             </picture>
@@ -76,16 +75,16 @@ const Arrows = ({
   };
 
   return (
-    <div className="absolute w-[105%] -left-[2.5%] top-[50%]">
-      <ul className="flex justify-between w-full">
+    <div className='absolute w-[110%] -left-[4%] md:w-[107%] top-[50%]'>
+      <ul className='flex justify-between w-full'>
         <Arrow
           behavior={handlePrev}
-          title="Previous Image"
-          arialLabel="Previous Image"
+          title='Previous Image'
+          arialLabel='Previous Image'
         >
           <PreviousIcon />
         </Arrow>
-        <Arrow behavior={handleNext} title="Next Image" arialLabel="Next Image">
+        <Arrow behavior={handleNext} title='Next Image' arialLabel='Next Image'>
           <NextIcon />
         </Arrow>
       </ul>

@@ -11,7 +11,7 @@ export const QuantityInput = () =>{
     return (
       <>
         <div className='w-full flex bg-secondary/10 h-12 rounded'>
-          <button className={`bg-transparent px-4 `} onClick={handleSubtract}>
+          <button className={`bg-transparent px-4`} onClick={handleSubtract}>
             <MinusIcon />
           </button>
           <div
@@ -21,7 +21,7 @@ export const QuantityInput = () =>{
           >
             {quantity}
           </div>
-          <button className='bg-transparent px-4 ' onClick={handleAdd}>
+          <button className='bg-transparent px-4' onClick={handleAdd}>
             <PlusIcon />
           </button>
         </div>

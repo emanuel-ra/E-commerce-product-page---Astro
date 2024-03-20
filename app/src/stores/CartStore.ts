@@ -5,8 +5,8 @@ interface CartState {
   open: boolean;
   setOpen: () => void;
   cart: Product[];
-  add: (product: Product) => {};
-  remove:(id:number)=>{}
+  add: (product: Product) => void;
+  remove: (id: number) => void;
 }
 
 export const useCartStore = create<CartState>()(

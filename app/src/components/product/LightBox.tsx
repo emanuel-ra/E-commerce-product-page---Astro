@@ -9,7 +9,7 @@ export const LightBox = () => {
 
   const open = useLightBoxStore((state) => state.open);
   const setOpen = useLightBoxStore((state) => state.setOpen);
-  const { image, alt, prev, next, id } = display;
+  const { image, alt, prev, next } = display;
 
   const handleDisplay = (image: Gallery) => setDisplay(image);
 

@@ -6,6 +6,7 @@ interface CartState {
   setOpen: () => void;
   cart: Product[];
   add: (product: Product) => {};
+  remove:(id:number)=>{}
 }
 
 export const useCartStore = create<CartState>(
@@ -29,6 +30,11 @@ export const useCartStore = create<CartState>(
 
           set({ cart: items });
         },
+        remove:(id:number)=>{
+          const { cart } = get()
+          const items = cart.filter(item => item.id !== id)
+          set({ cart: items });
+        }
       };
     },
     { name: `FRONTED::MENTOR::SHOPPING::CART` }

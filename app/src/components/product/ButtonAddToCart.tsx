@@ -4,8 +4,10 @@ import { CartIcon } from "../icons/CartIcon";
 
 export const ButtonAddToCart = ()=>{
     const addItem = useCartStore(state => state.add)
+    const setOpen = useCartStore((state) => state.setOpen);
 
     const handleClick = ()=>{
+        setOpen()
         const element = document?.getElementById('quantityItem');
         const qty = element?.getAttribute('data-quantity')!;      
         const id = 1 

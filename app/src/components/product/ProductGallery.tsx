@@ -17,7 +17,7 @@ export const ProductGallery = () => {
     }
   };
   return (
-    <section className='relative w-full flex flex-col lg:gap-y-5 justify-center lg:px-10 '>
+    <section className='relative w-full flex flex-col lg:gap-y-5 justify-center  '>
       <picture>
         <img
           src={image}

@@ -44,11 +44,7 @@ Users should be able to:
 
 ### Built with
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Next][Astro]][[Next-url](https://astro.build/)]
+* [![React][React.js]][[React-url](https://es.react.dev/)]
+
+

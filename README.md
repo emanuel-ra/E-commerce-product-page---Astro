@@ -36,7 +36,7 @@ Users should be able to:
 ![](./Imac24.webp)
 
 ### Links
-
+- Solution URL: [frontendmentor.io](https://www.frontendmentor.io/solutions/ecommerce-product-page-with-astro-tailwindcss-react-typescript-cmm2ZiaDR9)
 - Live Site URL: [netlify](https://main--zesty-biscotti-d4e006.netlify.app/)
 
 

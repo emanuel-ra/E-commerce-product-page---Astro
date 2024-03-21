@@ -8,26 +8,27 @@ import Price from '../components/product/Price.astro';
 import { ProductGallery } from '../components/product/ProductGallery';
 import { QuantityInput } from '../components/product/QuantityInput';
 import Layout from '../layouts/Layout.astro';
-
 ---
 
 <Layout title='Frontend Mentor | E-commerce product page.'>
   <Navigation />
   <main
-    class='min-w-[375px] w-375px md:w-[760] lg:w-[1440px] flex flex-col lg:flex-row lg:pt-28 max-w-[1440px] '
+    class='min-w-[375px] w-375px md:w-[760] lg:w-[1440px] flex flex-col lg:flex-row lg:pt-28 max-w-[1440px] px-20'
   >
     <div class='w-full lg:w-1/2'>
       <!-- FOR DESKTOP SIZE -->
       <ProductGallery client:only />
     </div>
 
-    <div class='px-4 lg:w-1/3 flex flex-col gap-y-2 lg:gap-y-4 mt-2 '>
-      <h2 class='uppercase font-semibold text-primary text-sm lg:text-base text-balance'>
+    <div class='px-4 lg:w-1/3 flex flex-col gap-y-2 lg:gap-y-4 mt-2'>
+      <h2
+        class='uppercase font-semibold text-primary text-sm lg:text-base text-balance'
+      >
         Sneaker Company
       </h2>
 
       <h3
-        class='uppercase text-2xl font-bold lg:text-4xl text-balance'                
+        class='uppercase text-2xl font-bold lg:text-4xl text-balance'
         aria-label='Fall Limited Edition Sneakers'
       >
         Fall Limited Edition Sneakers

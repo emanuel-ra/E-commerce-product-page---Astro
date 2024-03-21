@@ -12,10 +12,7 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+  - [Built with](#built-with)  
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -34,3 +31,24 @@ Users should be able to:
 - [x] View the cart and remove items from it
 
 ### Screenshot
+
+![](./iphone15pro.webp)
+![](./Imac24.webp)
+
+### Links
+
+- Live Site URL: [netlify](https://main--zesty-biscotti-d4e006.netlify.app/)
+
+
+## My process
+
+### Built with
+
+* [![Next][Next.js]][Next-url]
+* [![React][React.js]][React-url]
+* [![Vue][Vue.js]][Vue-url]
+* [![Angular][Angular.io]][Angular-url]
+* [![Svelte][Svelte.dev]][Svelte-url]
+* [![Laravel][Laravel.com]][Laravel-url]
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JQuery][JQuery.com]][JQuery-url]

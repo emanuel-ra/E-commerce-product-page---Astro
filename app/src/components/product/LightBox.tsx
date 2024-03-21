@@ -17,7 +17,7 @@ export const LightBox = () => {
     <div
       className={` transition ${
         open
-          ? 'absolute flex justify-center items-center w-full h-full top-0 bottom-0 right-0 overflow-hidden bg-black/75 z-30 '
+          ? 'absolute flex justify-center items-center w-full h-dvh md:h-full lg:h-dvh top-0 bottom-0 right-0 overflow-hidden bg-black/75 z-30 '
           : 'hidden'
       }`}
     >
